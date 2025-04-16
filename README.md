@@ -1,4 +1,4 @@
-# amenity-access-analysis-London.
+# Amenity-access-analysis-London.
 Code for spatial analysis of amenity access in London.
 # Amenity Access Analysis in London (2021 Census + OSM)
 
