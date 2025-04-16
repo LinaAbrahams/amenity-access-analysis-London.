@@ -14,9 +14,9 @@ This script contains all spatial analysis and figure generation code used in the
 # This script contains all spatial analysis and figure generation code used in the project.
 
 
-# =====================
+
 # LIBRARIES & SETTINGS
-# =====================
+
 import geopandas as gpd
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -36,9 +36,9 @@ warnings.filterwarnings("ignore")
 import os
 os.makedirs("figures", exist_ok=True)
 
-# =====================
+
 # LOAD DATA
-# =====================
+
 
 # Load census data
 df = pd.read_csv("data/UKCensus-21-11-London.csv")
@@ -64,9 +64,9 @@ cafes = ox.geometries_from_polygon(boundary_polygon, cafe_tags).to_crs(epsg=2770
 parks = ox.geometries_from_polygon(boundary_polygon, park_tags).to_crs(epsg=27700)
 groceries = ox.geometries_from_polygon(boundary_polygon, grocery_tags).to_crs(epsg=27700)
 
-# =====================
+
 # COUNT AMENITIES PER LSOA
-# =====================
+
 
 def count_amenities(amenity_gdf, census_gdf, amenity_name):
     if not amenity_gdf.geom_type.isin(["Point"]).all():
@@ -80,9 +80,9 @@ for name, gdf in zip(["schools", "cafes", "parks", "groceries"], [schools, cafes
     census_gdf = census_gdf.merge(count, on="LSOA21CD", how="left")
     census_gdf[name + "_count"] = census_gdf[name + "_count"].fillna(0).astype(int)
 
-# =====================
+
 # FIGURE 1 – AMENITY LOCATIONS
-# =====================
+
 fig, ax = plt.subplots(figsize=(12, 12))
 boroughs.plot(ax=ax, color='whitesmoke', edgecolor='black', linewidth=0.5)
 schools.plot(ax=ax, color='blue', markersize=8, label='Schools')
@@ -96,9 +96,9 @@ plt.tight_layout()
 plt.savefig("figures/Figure1_Amenity_Locations.png", dpi=300)
 plt.show()
 
-# =====================
+
 # FIGURE 2 – COMPOSITE AMENITY SCORE (CHOROPLETH)
-# =====================
+
 census_gdf["composite_access"] = (
     census_gdf["schools_count"] + census_gdf["cafes_count"] +
     census_gdf["parks_count"] + census_gdf["groceries_count"]
@@ -122,9 +122,9 @@ plt.savefig("figures/Figure2_Composite_Choropleth.png", dpi=300)
 plt.show()
 
 
-# =====================
+
 # FIGURE 3 – BOROUGH RANKED AMENITY SCORES (BAR CHART)
-# =====================
+
 boroughs_sorted = boroughs_counts.sort_values("composite_access", ascending=False)
 
 plt.figure(figsize=(10, 10))
@@ -137,9 +137,9 @@ plt.tight_layout()
 plt.savefig("figures/Figure3_Borough_Amenity_Scores.png", dpi=300)
 plt.show()
 
-# =====================
+
 # FIGURE 4 – KDE HEATMAPS
-# =====================
+
 xmin, ymin, xmax, ymax = boroughs.total_bounds
 fig, axs = plt.subplots(2, 2, figsize=(16, 16))
 amenity_dict = {
@@ -162,9 +162,9 @@ plt.tight_layout()
 plt.savefig("figures/Figure4_KDE_Heatmaps.png", dpi=300)
 plt.show()
 
-# =====================
+
 # FIGURE 5 – LISA CLUSTER MAP
-# =====================
+
 if census_gdf.crs is None:
     census_gdf.set_crs(epsg=4326, inplace=True)
 census_gdf = census_gdf.to_crs(epsg=27700)
@@ -182,9 +182,9 @@ ax.set_title("Figure 5: Local Moran's I (LISA) Cluster Map", fontsize=14)
 plt.savefig("figures/Figure5_LISA_Cluster.png", dpi=300)
 plt.show()
 
-# =====================
+
 # FIGURE 6 – BOXPLOT BY BOROUGH
-# =====================
+
 plt.figure(figsize=(14, 8))
 sns.boxplot(x="LAD22NM", y="composite_access", data=census_gdf, palette="Set3")
 plt.xticks(rotation=90)
@@ -195,9 +195,9 @@ plt.tight_layout()
 plt.savefig("figures/Figure6_Boxplot.png", dpi=300)
 plt.show()
 
-# =====================
+
 # FIGURE 7 – SCATTERPLOT: PARK COUNT VS. HEALTH
-# =====================
+
 if "HealthVG21" in census_gdf.columns:
     plt.figure(figsize=(10, 6))
     sns.regplot(x="parks_count", y="HealthVG21", data=census_gdf,
