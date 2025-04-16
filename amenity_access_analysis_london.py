@@ -1,10 +1,18 @@
-"""
+# Amenity Access Analysis in London (2021 Census + OSM)
+# Author: Lina Abrahams
+# Course: 5SSG2060 – Principles of Spatial Data Science
+# This script contains all spatial analysis and figure generation code used in the project.
+
 Amenity Access Analysis in London (2021 Census + OSM)
 Author: Lina Abrahams
 Course: 5SSG2060 – Principles of Spatial Data Science
 
 This script contains all spatial analysis and figure generation code used in the project.
-"""
+# Amenity Access Analysis in London (2021 Census + OSM)
+# Author: Lina Abrahams
+# Course: 5SSG2060 – Principles of Spatial Data Science
+# This script contains all spatial analysis and figure generation code used in the project.
+
 
 # =====================
 # LIBRARIES & SETTINGS
@@ -24,6 +32,9 @@ from pysal.explore import esda
 from splot.esda import lisa_cluster
 
 warnings.filterwarnings("ignore")
+
+import os
+os.makedirs("figures", exist_ok=True)
 
 # =====================
 # LOAD DATA
