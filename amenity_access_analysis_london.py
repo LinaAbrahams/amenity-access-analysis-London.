@@ -121,6 +121,22 @@ plt.tight_layout()
 plt.savefig("figures/Figure2_Composite_Choropleth.png", dpi=300)
 plt.show()
 
+
+# =====================
+# FIGURE 3 – BOROUGH RANKED AMENITY SCORES (BAR CHART)
+# =====================
+boroughs_sorted = boroughs_counts.sort_values("composite_access", ascending=False)
+
+plt.figure(figsize=(10, 10))
+plt.barh(boroughs_sorted["LAD22NM"], boroughs_sorted["composite_access"], color="steelblue")
+plt.xlabel("Amenity Score", fontsize=12, fontweight="bold")
+plt.ylabel("Borough", fontsize=12, fontweight="bold")
+plt.title("Figure 3: Borough-Level Composite Amenity Scores", fontsize=14)
+plt.gca().invert_yaxis()
+plt.tight_layout()
+plt.savefig("figures/Figure3_Borough_Amenity_Scores.png", dpi=300)
+plt.show()
+
 # =====================
 # FIGURE 4 – KDE HEATMAPS
 # =====================
