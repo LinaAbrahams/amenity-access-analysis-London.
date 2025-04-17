@@ -3,7 +3,7 @@
 
 **Author**: Lina Abrahams  
 **Course**: 5SSG2060 – Principles of Spatial Data Science  
-**Supervisor**: Dr James Millington
+
 
 This repository contains all spatial analysis and figure generation code used in the report:
 
@@ -11,7 +11,7 @@ This repository contains all spatial analysis and figure generation code used in
 
 ---
 
-## 📍 Overview
+##  Overview
 
 This project investigates spatial inequality in access to daily amenities across London. The analysis combines:
 
@@ -29,7 +29,7 @@ The workflow applies spatial data science techniques from the module, including:
 
 ---
 
-## 🧠 Research Question
+## Research Question
 
 > To what extent is walkable access to key amenities equitably distributed across London, and how do spatial scale and spatial autocorrelation affect interpretations of planning justice?
 
@@ -57,41 +57,17 @@ To run this project:
 3. Run `amenity_access_analysis_london.py`  
 4. Output figures will be saved to a folder named `/figures`
 
----
-
-## 🖼️ Sample Outputs
-
-### Figure 1 – Locations of Key Amenities in London
-![Figure 1](figures/Figure1_Amenity_Locations.png)
-
-### Figure 2 – Composite Amenity Access Score (Choropleth)
-![Figure 2](figures/Figure2_Composite_Choropleth.png)
-
-### Figure 3 – Borough Rankings by Amenity Access
-![Figure 3](figures/Figure3_Borough_Amenity_Scores.png)
 
 ---
 
-## 📂 Folder Structure
-
-```
-📁 amenity-access-analysis-London/
-├── amenity_access_analysis_london.py
-├── README.md
-├── /data/           ← Place all input data here
-└── /figures/        ← Output maps and plots will be saved here
-```
-
----
-
-## 📌 Notes
+##  Notes
 
 - All code is written in Python using packages such as GeoPandas, OSMnx, PySAL, Seaborn, and Matplotlib.
 - This project was developed as part of the 5SSG2060 module at King's College London.
 
 ---
 
-## 📬 Contact
+## Contact
 
 For any academic queries:  
 **Lina Abrahams** – [GitHub Profile](https://github.com/LinaAbrahams)
