@@ -67,9 +67,3 @@ To run this project:
 
 ---
 
-## Contact
-
-For any academic queries:  
-**Lina Abrahams** – [GitHub Profile](https://github.com/LinaAbrahams)
-
----
