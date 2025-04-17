@@ -35,7 +35,7 @@ The workflow applies spatial data science techniques from the module, including:
 
 ---
 
-## 📊 Key Figures
+## Key Figures
 
 | Figure | Description |
 |--------|-------------|
