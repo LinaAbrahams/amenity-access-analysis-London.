@@ -49,7 +49,7 @@ The workflow applies spatial data science techniques from the module, including:
 
 ---
 
-## 🛠️ How to Reproduce
+## How to Reproduce
 
 To run this project:
 1. Clone this repository
