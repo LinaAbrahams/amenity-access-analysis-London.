@@ -1,9 +1,6 @@
 
 # Amenity Access Analysis in London (2021 Census + OSM)
 
-**Author**: Lina Abrahams  
-**Course**: 5SSG2060 – Principles of Spatial Data Science  
-
 
 This repository contains all spatial analysis and figure generation code used in the report:
 
@@ -63,7 +60,6 @@ To run this project:
 ##  Notes
 
 - All code is written in Python using packages such as GeoPandas, OSMnx, PySAL, Seaborn, and Matplotlib.
-- This project was developed as part of the 5SSG2060 module at King's College London.
 
 ---
 
